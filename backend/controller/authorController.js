@@ -1,6 +1,6 @@
-const authorschema = require('../model/authorModel')
+const authorschema = require('../model/authormodel')
 
-const registerAuthor = async function(req,res){
+const registerAuthor = async (req,res) =>{
    try {
         
        let data = await authorschema.create(req.body)
@@ -11,7 +11,7 @@ const registerAuthor = async function(req,res){
    }};
 
 
-const getauthors = async function(req,res){
+const getauthors = async (req,res)=>{
    try {
        let data = await authorschema.find()
 
@@ -23,7 +23,7 @@ const getauthors = async function(req,res){
 
 
 
-const findauthorbyid = async function(req,res){
+const findauthorbyid = async (req,res)=>{
 
 try {
    let data = await authorschema.find({_id:req.body.id})
@@ -81,18 +81,4 @@ const updateauthor = async (req, res) => {
 
 
 module.exports = {registerAuthor,getauthors,findauthorbyid,updateauthor,deleteauthor}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
